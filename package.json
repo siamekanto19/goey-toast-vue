@@ -61,11 +61,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anl331/goey-toast-vue.git"
+    "url": "git+https://github.com/siamekanto19/goey-toast-vue.git"
   },
-  "homepage": "https://github.com/anl331/goey-toast-vue#readme",
+  "homepage": "https://github.com/siamekanto19/goey-toast-vue#readme",
   "bugs": {
-    "url": "https://github.com/anl331/goey-toast-vue/issues"
+    "url": "https://github.com/siamekanto19/goey-toast-vue/issues"
   },
   "engines": {
     "node": ">=18.0.0"

@@ -36,7 +36,9 @@
     "vue-sonner": ">=2.0.8"
   },
   "dependencies": {
-    "motion": "^12.23.24"
+    "dotenv": "^8.2.0",
+    "motion": "^12.23.24",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@types/node": "^25.2.3",
@@ -61,11 +63,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anl331/goey-toast-vue.git"
+    "url": "git+https://github.com/siamekanto19/goey-toast-vue.git"
   },
-  "homepage": "https://github.com/anl331/goey-toast-vue#readme",
+  "homepage": "https://github.com/siamekanto19/goey-toast-vue#readme",
   "bugs": {
-    "url": "https://github.com/anl331/goey-toast-vue/issues"
+    "url": "https://github.com/siamekanto19/goey-toast-vue/issues"
   },
   "engines": {
     "node": ">=18.0.0"

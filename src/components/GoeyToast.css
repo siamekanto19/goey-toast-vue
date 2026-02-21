@@ -1,0 +1,225 @@
+/* Spinner animation */
+.goey-spinnerSpin {
+  animation: goey-spin 1s linear infinite;
+}
+
+@keyframes goey-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Center position: center the toast within Sonner's container */
+[data-sonner-toast][data-x-position="center"] {
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: fit-content !important;
+}
+
+/* Style detection marker — used by GoeyToaster to verify CSS is loaded */
+[data-goey-toast-css] { --goey-toast: 1; }
+
+/* ============================================
+   Wrapper — single container for both states
+   ============================================ */
+.goey-wrapper {
+  pointer-events: auto;
+  cursor: default;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  position: relative;
+  width: fit-content;
+}
+
+/* SVG background — parametric morph from pill to blob */
+.goey-blobSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.06))
+          drop-shadow(0 1px 4px rgba(0, 0, 0, 0.04));
+}
+
+/* Content on top of SVG background */
+.goey-content {
+  position: relative;
+  z-index: 1;
+  transition: padding 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.goey-contentCompact {
+  padding: 7px 10px 7px 10px;
+}
+
+.goey-contentExpanded {
+  padding: 7px 10px 16px 10px;
+  max-width: 380px;
+}
+
+/* ============================================
+   Shared
+   ============================================ */
+.goey-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+}
+
+.goey-iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  line-height: 0;
+}
+
+.goey-title {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  color: inherit;
+  padding: 0 4px 0 2px;
+}
+
+.goey-titleDefault { color: #555; }
+.goey-titleSuccess { color: #4CAF50; }
+.goey-titleError { color: #E53935; }
+.goey-titleWarning { color: #C49000; }
+.goey-titleInfo { color: #1E88E5; }
+.goey-titleLoading { color: #555; }
+
+.goey-description {
+  font-size: 13px;
+  font-weight: 400;
+  color: #444;
+  line-height: 1.55;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.goey-actionWrapper {
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.goey-actionButton {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s ease;
+}
+
+.goey-actionButton:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.goey-actionButton:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.goey-actionDefault {
+  background: #E8E8E8;
+  color: #555;
+}
+.goey-actionDefault:hover { background: #DCDCDC; }
+.goey-actionDefault:active { background: #D0D0D0; }
+
+.goey-actionSuccess {
+  background: #C8E6C9;
+  color: #4CAF50;
+}
+.goey-actionSuccess:hover { background: #A5D6A7; }
+.goey-actionSuccess:active { background: #81C784; }
+
+.goey-actionError {
+  background: #FFCDD2;
+  color: #E53935;
+}
+.goey-actionError:hover { background: #EF9A9A; }
+.goey-actionError:active { background: #E57373; }
+
+.goey-actionWarning {
+  background: #FFECB3;
+  color: #C49000;
+}
+.goey-actionWarning:hover { background: #FFE082; }
+.goey-actionWarning:active { background: #FFD54F; }
+
+.goey-actionInfo {
+  background: #BBDEFB;
+  color: #1E88E5;
+}
+.goey-actionInfo:hover { background: #90CAF9; }
+.goey-actionInfo:active { background: #64B5F6; }
+
+/* ============================================
+   Dark mode
+   ============================================ */
+
+[data-sonner-toaster][data-theme="dark"] .goey-blobSvg {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3))
+          drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+}
+
+[data-sonner-toaster][data-theme="dark"] .goey-titleDefault { color: #ccc; }
+[data-sonner-toaster][data-theme="dark"] .goey-titleSuccess { color: #66BB6A; }
+[data-sonner-toaster][data-theme="dark"] .goey-titleError { color: #EF5350; }
+[data-sonner-toaster][data-theme="dark"] .goey-titleWarning { color: #FFB300; }
+[data-sonner-toaster][data-theme="dark"] .goey-titleInfo { color: #42A5F5; }
+[data-sonner-toaster][data-theme="dark"] .goey-titleLoading { color: #ccc; }
+
+[data-sonner-toaster][data-theme="dark"] .goey-description {
+  color: #aaa;
+}
+
+[data-sonner-toaster][data-theme="dark"] .goey-actionDefault {
+  background: #3a3a3a;
+  color: #ccc;
+}
+[data-sonner-toaster][data-theme="dark"] .goey-actionDefault:hover { background: #444; }
+[data-sonner-toaster][data-theme="dark"] .goey-actionDefault:active { background: #4e4e4e; }
+
+[data-sonner-toaster][data-theme="dark"] .goey-actionSuccess {
+  background: #1b5e20;
+  color: #66BB6A;
+}
+[data-sonner-toaster][data-theme="dark"] .goey-actionSuccess:hover { background: #2e7d32; }
+[data-sonner-toaster][data-theme="dark"] .goey-actionSuccess:active { background: #388e3c; }
+
+[data-sonner-toaster][data-theme="dark"] .goey-actionError {
+  background: #b71c1c;
+  color: #EF5350;
+}
+[data-sonner-toaster][data-theme="dark"] .goey-actionError:hover { background: #c62828; }
+[data-sonner-toaster][data-theme="dark"] .goey-actionError:active { background: #d32f2f; }
+
+[data-sonner-toaster][data-theme="dark"] .goey-actionWarning {
+  background: #4a3800;
+  color: #FFB300;
+}
+[data-sonner-toaster][data-theme="dark"] .goey-actionWarning:hover { background: #5c4600; }
+[data-sonner-toaster][data-theme="dark"] .goey-actionWarning:active { background: #6e5400; }
+
+[data-sonner-toaster][data-theme="dark"] .goey-actionInfo {
+  background: #0d47a1;
+  color: #42A5F5;
+}
+[data-sonner-toaster][data-theme="dark"] .goey-actionInfo:hover { background: #1565c0; }
+[data-sonner-toaster][data-theme="dark"] .goey-actionInfo:active { background: #1976d2; }
